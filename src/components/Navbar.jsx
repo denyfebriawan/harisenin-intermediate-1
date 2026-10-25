@@ -1,7 +1,9 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router";
+import { useAuth } from "../context/AuthContext";
 
 function Navbar() {
+  const { user, logout } = useAuth();
   const submenuRef = useRef(null);
 
   useEffect(() => {
@@ -72,12 +74,23 @@ function Navbar() {
         </ul>
       </nav>
       <div className="navbar-end gap-2">
-        <Link to="/login" className="btn btn-ghost btn-sm sm:btn-md">
-          Login
-        </Link>
-        <Link to="/register" className="btn btn-primary btn-sm sm:btn-md">
-          Register
-        </Link>
+        {user ? (
+          <>
+            <span className="hidden text-sm sm:inline">Hi, {user.name}</span>
+            <button type="button" className="btn btn-ghost btn-sm sm:btn-md" onClick={logout}>
+              Logout
+            </button>
+          </>
+        ) : (
+          <>
+            <Link to="/login" className="btn btn-ghost btn-sm sm:btn-md">
+              Login
+            </Link>
+            <Link to="/register" className="btn btn-primary btn-sm sm:btn-md">
+              Register
+            </Link>
+          </>
+        )}
       </div>
     </header>
   );
