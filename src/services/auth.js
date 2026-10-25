@@ -33,7 +33,7 @@ export function registerUser({ name, email, password }) {
   const normalizedEmail = normalizeEmail(email);
 
   if (users.some((user) => user.email === normalizedEmail)) {
-    throw new Error("This email is already registered.");
+    throw new Error("Email ini sudah terdaftar.");
   }
 
   const newUser = { name: name.trim(), email: normalizedEmail, password };
@@ -47,7 +47,7 @@ export function loginUser({ email, password }) {
   const user = users.find((user) => user.email === normalizedEmail && user.password === password);
 
   if (!user) {
-    throw new Error("Incorrect email or password.");
+    throw new Error("Email atau kata sandi salah.");
   }
 
   return startSession(user);

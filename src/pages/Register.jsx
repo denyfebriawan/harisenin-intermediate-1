@@ -22,7 +22,7 @@ function Register() {
     setError("");
 
     if (form.password !== form.confirmPassword) {
-      setError("Passwords do not match.");
+      setError("Konfirmasi kata sandi tidak sama.");
       return;
     }
 
@@ -38,7 +38,7 @@ function Register() {
     <section className="hero bg-base-200 min-h-[calc(100svh-4rem)] px-4 py-10">
       <div className="card bg-base-100 w-full max-w-sm shadow-xl">
         <form className="card-body" onSubmit={handleSubmit}>
-          <h1 className="card-title text-2xl">Register</h1>
+          <h1 className="card-title text-2xl">Daftar</h1>
 
           {error && (
             <div role="alert" className="alert alert-error alert-soft">
@@ -48,7 +48,7 @@ function Register() {
 
           <fieldset className="fieldset">
             <label className="label" htmlFor="name">
-              Name
+              Nama
             </label>
             <input id="name" name="name" type="text" className="input w-full" value={form.name} onChange={handleChange} autoComplete="name" required />
 
@@ -58,24 +58,24 @@ function Register() {
             <input id="email" name="email" type="email" className="input w-full" value={form.email} onChange={handleChange} autoComplete="email" required />
 
             <label className="label" htmlFor="password">
-              Password
+              Kata sandi (min. 8 karakter)
             </label>
             <input id="password" name="password" type="password" className="input w-full" value={form.password} onChange={handleChange} autoComplete="new-password" minLength={8} required />
 
             <label className="label" htmlFor="confirmPassword">
-              Confirm password
+              Konfirmasi kata sandi
             </label>
             <input id="confirmPassword" name="confirmPassword" type="password" className="input w-full" value={form.confirmPassword} onChange={handleChange} autoComplete="new-password" minLength={8} required />
           </fieldset>
 
           <button type="submit" className="btn btn-primary mt-2">
-            Register
+            Daftar
           </button>
 
           <p className="text-center text-sm">
-            Already have an account?{" "}
+            Sudah punya akun?{" "}
             <Link to="/login" className="link link-primary">
-              Login
+              Masuk
             </Link>
           </p>
         </form>

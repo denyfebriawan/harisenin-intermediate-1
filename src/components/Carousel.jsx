@@ -1,10 +1,10 @@
 import { useRef } from "react";
 
 const slides = [
-  { src: "https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp", alt: "San Francisco skyline on a clear day" },
-  { src: "https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp", alt: "Waterfront stadium and city towers lit up at dusk" },
-  { src: "https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp", alt: "City skyline behind a green park on a sunny day" },
-  { src: "https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp", alt: "Hillside seaside town above a turquoise bay" },
+  { src: "https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp", alt: "Gedung-gedung pencakar langit San Francisco di hari yang cerah" },
+  { src: "https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp", alt: "Stadion dan gedung kota di tepi air yang menyala saat senja" },
+  { src: "https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp", alt: "Deretan gedung kota di balik taman hijau saat cuaca cerah" },
+  { src: "https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp", alt: "Kota pesisir di lereng bukit di atas teluk berwarna biru toska" },
 ];
 
 function Carousel() {
@@ -18,7 +18,7 @@ function Carousel() {
   }
 
   return (
-    <section aria-label="Image gallery" className="relative">
+    <section aria-label="Galeri foto" className="relative">
       <div ref={trackRef} className="carousel w-full">
         {slides.map((slide) => (
           <div key={slide.src} className="carousel-item w-full">
@@ -27,10 +27,10 @@ function Carousel() {
         ))}
       </div>
       <div className="pointer-events-none absolute inset-x-5 top-1/2 flex -translate-y-1/2 justify-between">
-        <button type="button" aria-label="Previous slide" className="btn btn-circle pointer-events-auto" onClick={() => slideBy(-1)}>
+        <button type="button" aria-label="Slide sebelumnya" className="btn btn-circle pointer-events-auto" onClick={() => slideBy(-1)}>
           ❮
         </button>
-        <button type="button" aria-label="Next slide" className="btn btn-circle pointer-events-auto" onClick={() => slideBy(1)}>
+        <button type="button" aria-label="Slide berikutnya" className="btn btn-circle pointer-events-auto" onClick={() => slideBy(1)}>
           ❯
         </button>
       </div>
